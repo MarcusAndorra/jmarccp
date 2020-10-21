@@ -91,14 +91,12 @@ window.addEventListener("load",
 //FUNCION DE LAS LETRAS QUE SE ESCRIBEN SOLAS
 const typed = new Typed('.typed', {
     strings: 
-    ['HTML5',
-    'CSS3',
-    'SCSS',
+    ['HTML5-CSS3',
     'JAVASCRIPT',
     'PHP&MYSQL',
     'WORDPRESS',
     'PRESTASHOP',
-    'SEO',
+    'POSICIONAMIENTO SEO',
     'GIT&GITHUB',
     'HUGO'
     ],

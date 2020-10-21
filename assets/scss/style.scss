@@ -368,6 +368,7 @@ body{
     #portfolio{
         width: 100%;
         margin-top: 100px;
+        @include flex($fd:column);
         h2{
             color: $steel;
             @include flex($fd:column);
@@ -392,12 +393,20 @@ body{
         }
         .fila{
             @include flex();
+            width: 80%;
             .articulo{
-                margin: 0 40px 60px 40px;
-                display: flex;
-                justify-content: center;
+                width: 30%;
+                margin: 20px;
+                @include flex();
                 overflow: hidden;
-                border: double $azul;
+                background-color: $steel;
+                border: double $amarillo;
+                @include media($tam:768px){
+                    width: 50%;
+                }
+                @include media($tam:450px){
+                    width: 100%;
+                }
                 &:hover{
                     transition: 1s ease;
                     box-shadow: 20px 20px 8px 0px rgba(0,0,0,0.75)
@@ -405,11 +414,6 @@ body{
                 a{
                     text-decoration: none;
                     color: $azul;
-                }
-                img{
-                    @include media($tam:500px){
-                        width: 250px;
-                    }
                 }
             }
         }
@@ -453,12 +457,12 @@ body{
         h2{
             color: $steel;
             @include flex($fd:column);
-            margin: 0 0 50px 0; 
             font-size: 3rem;
             text-align: center;
             
             @include media($tam:768px){
                 font-size: 1.5rem;
+                margin-top: 50px;
             }
             &:after{
                 content: "";
@@ -474,6 +478,7 @@ body{
         }
         .glide {
             display: flex;
+            flex-direction: column;
             width: 80%;
             overflow: hidden;
             .glide__track {
@@ -488,12 +493,13 @@ body{
                         margin: 60px 40px !important;
                         border-radius: 10px;
                         h3 {
-                            color: $amarillo;
+                            color: $blanco;
                             text-transform: uppercase;
                             text-align: center;
+                            font-size: 1.5rem;
                         }
                         > div {
-                            color: $blanco;
+                            color: $amarillo;
                             font-weight: bold;
                             font-size: 2rem;
                             margin: 10px 0;
@@ -508,6 +514,28 @@ body{
                         }
                     }
                 }
+            }
+            .glide__bullets {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                .glide__bullet {
+                    margin: 20px 10px;
+                    width: 10px;
+                    padding: 0;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: $azul;
+                    opacity: .4;
+                    cursor: pointer;
+                    &:focus {
+                      visibility: hidden;
+                    }
+                  }
+                  .glide__bullet--active{
+                    background: $amarillo;
+                    opacity: 1;
+                  }
             }
         }
     }
