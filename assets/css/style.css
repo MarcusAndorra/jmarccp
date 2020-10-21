@@ -1214,6 +1214,76 @@ a {
   }
 }
 
+.botonPortfolio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 100px;
+}
+
+.botonPortfolio .enlace-sig-bloque {
+  font-size: 1.5rem;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  color: #0a1612;
+}
+
+.botonPortfolio .enlace-sig-bloque:hover {
+  opacity: .8;
+}
+
+.botonPortfolio .enlace-sig-bloque span {
+  color: #1a2930;
+}
+
+.botonPortfolio .scrollAnimado {
+  width: 22px;
+  height: 33px;
+  border-radius: 20px;
+  border: 3px solid #1a2930;
+  margin: 10px 0 20px 0;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 1 ease;
+  transition: all 1 ease;
+}
+
+.botonPortfolio .scrollAnimado:hover {
+  opacity: .8;
+}
+
+.botonPortfolio .scrollAnimado span {
+  width: 7px;
+  height: 7px;
+  -webkit-animation-name: scroll;
+          animation-name: scroll;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-color: #0a1612;
+  border-radius: 50%;
+}
+
 body {
   font-family: Verdana, Tahoma, sans-serif;
 }
@@ -1246,7 +1316,7 @@ body .subirArriba a span {
 }
 
 body .animado-lazy {
-  opacity: 0;
+  padding-top: 200px;
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
   -webkit-animation-name: scrollLazyAnimado;
@@ -1727,75 +1797,6 @@ body main #principal .banner h2 {
   }
 }
 
-body main #principal .botonPortfolio {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-body main #principal .botonPortfolio h2 {
-  font-size: 1.5rem;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-  color: #0a1612;
-}
-
-body main #principal .botonPortfolio h2:hover {
-  opacity: .8;
-}
-
-body main #principal .botonPortfolio h2 span {
-  color: #1a2930;
-}
-
-body main #principal .botonPortfolio .scrollAnimado {
-  width: 22px;
-  height: 33px;
-  border-radius: 20px;
-  border: 3px solid #1a2930;
-  margin: 10px 0 20px 0;
-  -webkit-transition: 1s ease;
-  transition: 1s ease;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  cursor: pointer;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transition: all 1 ease;
-  transition: all 1 ease;
-}
-
-body main #principal .botonPortfolio .scrollAnimado:hover {
-  opacity: .8;
-}
-
-body main #principal .botonPortfolio .scrollAnimado span {
-  width: 7px;
-  height: 7px;
-  -webkit-animation-name: scroll;
-          animation-name: scroll;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  background-color: #0a1612;
-  border-radius: 50%;
-}
-
 body main #principal h1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2035,6 +2036,7 @@ body main #habilidades {
           flex-direction: column;
   width: 100%;
   height: 60vh;
+  margin-top: 100px;
 }
 
 body main #habilidades h2 {
