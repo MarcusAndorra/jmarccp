@@ -118,6 +118,7 @@ const typed = new Typed('.typed', {
 // funcion lazy para las secciones
 
     let animado_lazy = document.querySelectorAll(".animado-lazy");
+    let flechita = document.querySelector(".subirArriba");
 
     function lazyScroll(){
         let scrollTop =  document.documentElement.scrollTop;
@@ -125,11 +126,20 @@ const typed = new Typed('.typed', {
 
             // calculo la altura ke hay hasta el objeto con clase .animado-lazy
             let alturaLazy = animado_lazy[i].offsetTop;
-            if(alturaLazy - 600 < scrollTop){
+            if(alturaLazy - 600 < scrollTop) {
                 animado_lazy[i].style.paddingTop = 0;
+                flechita.style.opacity = 1;
+            }else if(alturaLazy - 700 < scrollTop) {
+                flechita.style.opacity = 0;
             }
         }
+        let subir = document.querySelector(".subirArriba");
+        if (scrollTop > 400) {
+          subir.style.opacity = 1;
+        } else if (scrollTop <= 400) {
+          subir.style.opacity = 0;
+        }
     }
-    // PONER ALTURALAZY A - 600
+    
 
 window.addEventListener("scroll", lazyScroll);

@@ -59,6 +59,8 @@ body{
         z-index: 9999;
         bottom: 50px;
         right: 20px;
+        opacity: 0;
+        transition: opacity ease;
         cursor: pointer;
         a{
             text-decoration: none;
@@ -489,19 +491,18 @@ body{
                     @include flex($fw:no-wrap);
                     .glide__slide {
                         @include flex($fd:column);
-                        background: $azul;
                         width: 150px;
                         height: 150px;
                         margin: 60px 40px !important;
                         border-radius: 10px;
                         h3 {
-                            color: $blanco;
+                            color: $steel;
                             text-transform: uppercase;
                             text-align: center;
                             font-size: 1.5rem;
                         }
                         > div {
-                            color: $amarillo;
+                            color: $steel;
                             font-weight: bold;
                             font-size: 2rem;
                             margin: 10px 0;

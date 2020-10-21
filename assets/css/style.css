@@ -1303,6 +1303,9 @@ body .subirArriba {
   z-index: 9999;
   bottom: 50px;
   right: 20px;
+  opacity: 0;
+  -webkit-transition: opacity ease;
+  transition: opacity ease;
   cursor: pointer;
 }
 
@@ -2132,7 +2135,6 @@ body main #habilidades .glide .glide__track .glide__slides .glide__slide {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #1a2930;
   width: 150px;
   height: 150px;
   margin: 60px 40px !important;
@@ -2140,14 +2142,14 @@ body main #habilidades .glide .glide__track .glide__slides .glide__slide {
 }
 
 body main #habilidades .glide .glide__track .glide__slides .glide__slide h3 {
-  color: #f2f2f2;
+  color: #0a1612;
   text-transform: uppercase;
   text-align: center;
   font-size: 1.5rem;
 }
 
 body main #habilidades .glide .glide__track .glide__slides .glide__slide > div {
-  color: #f7ce3e;
+  color: #0a1612;
   font-weight: bold;
   font-size: 2rem;
   margin: 10px 0;
