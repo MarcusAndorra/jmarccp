@@ -82,12 +82,12 @@ const typed = new Typed(".typed", {
   strings: [
     "HTML5-CSS3",
     "JAVASCRIPT",
-    "PHP&MYSQL",
+    "PHP-MYSQL",
     "WORDPRESS",
     "PRESTASHOP",
     "POSICIONAMIENTO SEO",
-    "GIT&GITHUB",
-    "HUGO",
+    "GIT-GITHUB",
+    "GO-HUGO",
   ],
   stringsElement: "#cadenas-texto",
   typeSpeed: 100, //velocidad poner letras

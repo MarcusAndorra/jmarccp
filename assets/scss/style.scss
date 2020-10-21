@@ -64,7 +64,7 @@ body{
         cursor: pointer;
         a{
             text-decoration: none;
-            color: $amarillo !important;
+            color: $azul !important;
             span{
                 font-size: 3rem;
             }
@@ -489,16 +489,16 @@ body{
                 width: 100%;
                 .glide__slides {
                     @include flex($fw:no-wrap);
-                    .glide__slide {
+                    li {
                         @include flex($fd:column);
                         width: 150px;
                         height: 150px;
-                        margin: 60px 40px !important;
+                        margin: 60px 0 !important;
                         border-radius: 10px;
+                        border: solid 1px $steel;
                         h3 {
                             color: $steel;
                             text-transform: uppercase;
-                            text-align: center;
                             font-size: 1.5rem;
                         }
                         > div {
@@ -507,7 +507,6 @@ body{
                             font-size: 2rem;
                             margin: 10px 0;
                             @include flex;
-                            
                             .porciento {
                                 font-size: 1rem;
                                 align-self: start;

@@ -1311,7 +1311,7 @@ body .subirArriba {
 
 body .subirArriba a {
   text-decoration: none;
-  color: #f7ce3e !important;
+  color: #1a2930 !important;
 }
 
 body .subirArriba a span {
@@ -2119,7 +2119,7 @@ body main #habilidades .glide .glide__track .glide__slides {
           flex-direction: row;
 }
 
-body main #habilidades .glide .glide__track .glide__slides .glide__slide {
+body main #habilidades .glide .glide__track .glide__slides li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2137,18 +2137,18 @@ body main #habilidades .glide .glide__track .glide__slides .glide__slide {
           flex-direction: column;
   width: 150px;
   height: 150px;
-  margin: 60px 40px !important;
+  margin: 60px 0 !important;
   border-radius: 10px;
+  border: solid 1px #0a1612;
 }
 
-body main #habilidades .glide .glide__track .glide__slides .glide__slide h3 {
+body main #habilidades .glide .glide__track .glide__slides li h3 {
   color: #0a1612;
   text-transform: uppercase;
-  text-align: center;
   font-size: 1.5rem;
 }
 
-body main #habilidades .glide .glide__track .glide__slides .glide__slide > div {
+body main #habilidades .glide .glide__track .glide__slides li > div {
   color: #0a1612;
   font-weight: bold;
   font-size: 2rem;
@@ -2170,7 +2170,7 @@ body main #habilidades .glide .glide__track .glide__slides .glide__slide > div {
           flex-direction: row;
 }
 
-body main #habilidades .glide .glide__track .glide__slides .glide__slide > div .porciento {
+body main #habilidades .glide .glide__track .glide__slides li > div .porciento {
   font-size: 1rem;
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
