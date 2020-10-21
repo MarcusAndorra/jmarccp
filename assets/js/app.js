@@ -127,10 +127,11 @@ const typed = new Typed('.typed', {
 
             // calculo la altura ke hay hasta el objeto con clase .animado-lazy
             let alturaLazy = animado_lazy[i].offsetTop;
-            if(alturaLazy - 600 < scrollTop){
+            if(alturaLazy - 1500 < scrollTop){
                 animado_lazy[i].style.opacity = 1;
             }
         }
     }
+    // PONER ALTURALAZY A - 600
 
 window.addEventListener("scroll", lazyScroll);

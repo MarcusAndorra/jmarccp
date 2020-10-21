@@ -444,8 +444,12 @@ body{
         }
     }
     #habilidades{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         width: 100%;
-        margin-top: 100px;
+        height: 60vh;
         h2{
             color: $steel;
             @include flex($fd:column);
@@ -466,6 +470,44 @@ body{
                 animation-duration: 4s;
                 animation-iteration-count:infinite;
                 behavior: smooth;
+            }
+        }
+        .glide {
+            display: flex;
+            width: 80%;
+            overflow: hidden;
+            .glide__track {
+                width: 100%;
+                .glide__slides {
+                    @include flex($fw:no-wrap);
+                    .glide__slide {
+                        @include flex($fd:column);
+                        background: $azul;
+                        width: 150px;
+                        height: 150px;
+                        margin: 60px 40px !important;
+                        border-radius: 10px;
+                        h3 {
+                            color: $amarillo;
+                            text-transform: uppercase;
+                            text-align: center;
+                        }
+                        > div {
+                            color: $blanco;
+                            font-weight: bold;
+                            font-size: 2rem;
+                            margin: 10px 0;
+                            @include flex;
+                            
+                            .porciento {
+                                font-size: 1rem;
+                                align-self: start;
+                                transform: translateY(20%);
+                                margin-left: 3px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

@@ -1108,6 +1108,27 @@ a {
   text-decoration: none;
 }
 
+@-webkit-keyframes coloresSimbol {
+  0% {
+    color: transparent;
+  }
+  20% {
+    color: #1a2930;
+  }
+  40% {
+    color: transparent;
+  }
+  60% {
+    color: transparent;
+  }
+  80% {
+    color: #0a1612;
+  }
+  100% {
+    color: transparent;
+  }
+}
+
 @keyframes coloresSimbol {
   0% {
     color: transparent;
@@ -1129,12 +1150,33 @@ a {
   }
 }
 
+@-webkit-keyframes scroll {
+  0% {
+    margin-top: 10px;
+  }
+  100% {
+    margin-top: 20px;
+  }
+}
+
 @keyframes scroll {
   0% {
     margin-top: 10px;
   }
   100% {
     margin-top: 20px;
+  }
+}
+
+@-webkit-keyframes afterSection {
+  0% {
+    width: 150px;
+  }
+  50% {
+    width: 40px;
+  }
+  100% {
+    width: 150px;
   }
 }
 
@@ -1150,12 +1192,25 @@ a {
   }
 }
 
-@keyframes scrollLazyAnimado {
+@-webkit-keyframes scrollLazyAnimado {
   0% {
-    transform: translateY(100px);
+    -webkit-transform: translateY(60px);
+            transform: translateY(60px);
   }
   100% {
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes scrollLazyAnimado {
+  0% {
+    -webkit-transform: translateY(60px);
+            transform: translateY(60px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
 }
 
@@ -1192,17 +1247,29 @@ body .subirArriba a span {
 
 body .animado-lazy {
   opacity: 0;
-  transition: all 1s;
-  animation-name: scrollLazyAnimado;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+  -webkit-animation-name: scrollLazyAnimado;
+          animation-name: scrollLazyAnimado;
 }
 
 body header {
   color: #f2f2f2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   border-radius: 0 10px 10px 0;
   position: fixed;
   z-index: 999;
@@ -1219,15 +1286,26 @@ body header #conoceme {
   overflow: hidden;
   width: 30%;
   height: 100vh;
+  -webkit-transition: all .7s ease;
   transition: all .7s ease;
   left: -700px;
   padding: 0 20px;
   border-radius: 0 10px 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: no-wrap;
-  flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media screen and (max-width: 768px) {
@@ -1270,8 +1348,12 @@ body header #conoceme a {
 
 body header #conoceme span {
   color: #f2f2f2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   width: 100%;
 }
 
@@ -1282,11 +1364,21 @@ body header #conoceme span i {
 }
 
 body header #conoceme .infoConoceme {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body header #conoceme .infoConoceme p {
@@ -1294,11 +1386,21 @@ body header #conoceme .infoConoceme p {
 }
 
 body header #conoceme #curriculum {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin: 10px 0 20px 0;
 }
 
@@ -1311,6 +1413,7 @@ body header #conoceme #curriculum a {
 }
 
 body header #conoceme #curriculum a:hover {
+  -webkit-transition: 1s ease;
   transition: 1s ease;
   color: #f7ce3e;
   background-color: #1a2930;
@@ -1322,10 +1425,12 @@ body header #conoceme #curriculum h3 {
 
 body header h2 {
   color: #1a2930;
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
   font-weight: bold;
   font-size: 1.8rem;
-  text-decoration: underline #f7ce3e;
+  -webkit-text-decoration: underline #f7ce3e;
+          text-decoration: underline #f7ce3e;
   letter-spacing: 2px;
   cursor: pointer;
 }
@@ -1337,11 +1442,21 @@ body header h2 {
 }
 
 body header #contactame {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   border-radius: 10px 0 0 10px;
   position: fixed;
   z-index: 999;
@@ -1359,12 +1474,23 @@ body header #contactame #contacto {
   width: 30%;
   height: 100vh;
   right: -700px;
+  -webkit-transition: all .7s ease;
   transition: all .7s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media screen and (max-width: 768px) {
@@ -1375,8 +1501,12 @@ body header #contactame #contacto {
 
 body header #contactame #contacto span {
   color: #f7ce3e;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   width: 100%;
 }
 
@@ -1412,12 +1542,23 @@ body header #contactame #contacto a {
   text-decoration: none;
   color: #f2f2f2;
   margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   font-size: 1rem;
+  -webkit-transition: all .4s ease;
   transition: all .4s ease;
 }
 
@@ -1434,9 +1575,15 @@ body header #contactame #contacto .direccionCasa {
   width: 100%;
   height: 100px;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body header #contactame #contacto .direccionCasa a {
@@ -1449,11 +1596,21 @@ body header #contactame #contacto .direccionCasa a img {
 }
 
 body header #contactame #contacto .redesSociales {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-top: 20px;
   width: 100%;
 }
@@ -1465,6 +1622,7 @@ body header #contactame #contacto .redesSociales a {
 
 body header #contactame #contacto .redesSociales a i {
   color: #f7ce3e;
+  -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
 
@@ -1474,12 +1632,14 @@ body header #contactame #contacto .redesSociales a i:hover {
 
 body header #contactame h2 {
   color: #0a1612;
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
   font-weight: bold;
   font-size: 1.8rem;
   letter-spacing: 2px;
   cursor: pointer;
-  text-decoration: underline #f7ce3e;
+  -webkit-text-decoration: underline #f7ce3e;
+          text-decoration: underline #f7ce3e;
 }
 
 @media screen and (max-width: 768px) {
@@ -1492,19 +1652,39 @@ body main #principal {
   width: 100%;
   min-height: 100vh;
   background: url("../img/fondo_principal.png") no-repeat left center/cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body main #principal .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body main #principal .logo img {
@@ -1513,11 +1693,21 @@ body main #principal .logo img {
 
 body main #principal .banner {
   width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   text-align: center;
 }
 
@@ -1538,15 +1728,26 @@ body main #principal .banner h2 {
 }
 
 body main #principal .botonPortfolio {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body main #principal .botonPortfolio h2 {
   font-size: 1.5rem;
+  -webkit-transition: all 1s ease;
   transition: all 1s ease;
   color: #0a1612;
 }
@@ -1565,10 +1766,16 @@ body main #principal .botonPortfolio .scrollAnimado {
   border-radius: 20px;
   border: 3px solid #1a2930;
   margin: 10px 0 20px 0;
+  -webkit-transition: 1s ease;
   transition: 1s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   cursor: pointer;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 1 ease;
   transition: all 1 ease;
 }
 
@@ -1579,16 +1786,23 @@ body main #principal .botonPortfolio .scrollAnimado:hover {
 body main #principal .botonPortfolio .scrollAnimado span {
   width: 7px;
   height: 7px;
-  animation-name: scroll;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+          animation-name: scroll;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   background-color: #0a1612;
   border-radius: 50%;
 }
 
 body main #principal h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 2.5rem;
   color: #1a2930;
 }
@@ -1605,9 +1819,12 @@ body main #principal h1 .greemarc {
 
 body main #principal h1 .yell {
   color: #f7ce3e;
-  animation-name: coloresSimbol;
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: coloresSimbol;
+          animation-name: coloresSimbol;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 body main #principal h1 .gree {
@@ -1619,8 +1836,12 @@ body main #principal h1 span {
 }
 
 body main #principal div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body main #portfolio {
@@ -1630,12 +1851,22 @@ body main #portfolio {
 
 body main #portfolio h2 {
   color: #0a1612;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  margin-bottom: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 0 50px 0;
   font-size: 3rem;
   text-align: center;
 }
@@ -1652,36 +1883,50 @@ body main #portfolio h2:after {
   background: #f7ce3e;
   display: block;
   margin: 10px 0 30px 0;
-  animation-name: afterSection;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: afterSection;
+          animation-name: afterSection;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   behavior: smooth;
 }
 
 body main #portfolio .fila {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 body main #portfolio .fila .articulo {
   margin: 0 40px 60px 40px;
-  width: 360px;
-  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
   border: double #1a2930;
 }
 
-@media screen and (max-width: 500px) {
-  body main #portfolio .fila .articulo {
-    width: 250px;
-  }
-}
-
 body main #portfolio .fila .articulo:hover {
+  -webkit-transition: 1s ease;
   transition: 1s ease;
+  -webkit-box-shadow: 20px 20px 8px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 20px 20px 8px 0px rgba(0, 0, 0, 0.75);
 }
 
 body main #portfolio .fila .articulo a {
@@ -1697,8 +1942,12 @@ body main #portfolio .fila .articulo a {
 
 body main #portfolio .segundoAnimado {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body main #portfolio .segundoAnimado .scrollAnimado {
@@ -1707,10 +1956,16 @@ body main #portfolio .segundoAnimado .scrollAnimado {
   border-radius: 20px;
   border: 3px solid #1a2930;
   margin: 10px 0 20px 0;
+  -webkit-transition: 1s ease;
   transition: 1s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   cursor: pointer;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 1 ease;
   transition: all 1 ease;
 }
 
@@ -1721,26 +1976,52 @@ body main #portfolio .segundoAnimado .scrollAnimado:hover {
 body main #portfolio .segundoAnimado .scrollAnimado span {
   width: 7px;
   height: 7px;
-  animation-name: scroll;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+          animation-name: scroll;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   background-color: #0a1612;
   border-radius: 50%;
 }
 
 body main #habilidades {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
-  margin-top: 40px;
+  height: 60vh;
 }
 
 body main #habilidades h2 {
   color: #0a1612;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  margin-bottom: 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 0 50px 0;
   font-size: 3rem;
   text-align: center;
 }
@@ -1757,10 +2038,104 @@ body main #habilidades h2:after {
   background: #f7ce3e;
   display: block;
   margin: 10px 0 30px 0;
-  animation-name: afterSection;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: afterSection;
+          animation-name: afterSection;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   behavior: smooth;
+}
+
+body main #habilidades .glide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  overflow: hidden;
+}
+
+body main #habilidades .glide .glide__track {
+  width: 100%;
+}
+
+body main #habilidades .glide .glide__track .glide__slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body main #habilidades .glide .glide__track .glide__slides .glide__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #1a2930;
+  width: 150px;
+  height: 150px;
+  margin: 60px 40px !important;
+  border-radius: 10px;
+}
+
+body main #habilidades .glide .glide__track .glide__slides .glide__slide h3 {
+  color: #f7ce3e;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+body main #habilidades .glide .glide__track .glide__slides .glide__slide > div {
+  color: #f2f2f2;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body main #habilidades .glide .glide__track .glide__slides .glide__slide > div .porciento {
+  font-size: 1rem;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+  margin-left: 3px;
 }
 
 body footer {
@@ -1771,11 +2146,20 @@ body footer {
   background-color: #f7ce3e;
   font-weight: bold;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 body footer small {
@@ -1786,3 +2170,4 @@ body footer a {
   text-decoration: none;
   color: #0a1612;
 }
+/*# sourceMappingURL=style.css.map */

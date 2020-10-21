@@ -154,6 +154,46 @@
 
         <section id="habilidades" class="animado-lazy">
             <h2>Habilidades</h2>
+            <article class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <h3>html <br> css</h3>
+                            <div><span>95</span><span class="porciento">%</span></div>
+                        </li>
+                  
+                        <li class="glide__slide">
+                            <h3>javascript</h3>
+                            <div><span>70</span><span class="porciento">%</span></div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h3>php <br> mysql</h3>
+                            <div><span>80</span><span class="porciento">%</span></div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h3>wordpress</h3>
+                            <div><span>80</span><span class="porciento">%</span></div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h3>prestashop</h3>
+                            <div><span>70</span><span class="porciento">%</span></div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h3>git <br> github</h3>
+                            <div><span>95</span><span class="porciento">%</span></div>
+                        </li>
+
+                        <li class="glide__slide">
+                            <h3>go <br> hugo</h3>
+                            <div><span>90</span><span class="porciento">%</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </article>
         </section>
     </main>
 
@@ -180,7 +220,26 @@
 
 
 
-
+<script src="assets/js/glide.min.js"></script>
+<script>
+    const glideConfig = {
+        type: 'carousel',
+        autoplay: 2500,
+        perView: 4,
+        breakpoints: {
+            1024: {
+                perView: 3
+            },
+            768: {
+                perView: 2
+            },
+            450: {
+                perView: 1
+            }
+        }
+    }
+    new Glide('.glide', glideConfig).mount();
+  </script>
 
 <script src="assets/js/typed.js"></script>
 <script src="assets/js/app.js"></script>
