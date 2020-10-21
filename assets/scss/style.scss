@@ -1,0 +1,501 @@
+@import "variables";
+@import "mixin";
+@import "reset";
+@import "keyframes";
+
+ //------------------------ESTILOS DEL BODY------------------------//
+body{
+    font-family: Verdana, Tahoma, sans-serif;
+    &::-webkit-scrollbar{
+        width: 4px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $amarillo;
+        padding-top: inherit;
+        border-radius: 10px;
+    }
+
+    .subirArriba{
+        position: fixed;
+        z-index: 9999;
+        bottom: 50px;
+        right: 20px;
+        cursor: pointer;
+        a{
+            text-decoration: none;
+            color: $amarillo !important;
+            span{
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .animado-lazy{
+        opacity: 0;
+        transition: all ease 1s;
+        animation-name: scrollLazyAnimado;
+    }
+
+ //------------------------ESTILOS DEL HEADER------------------------//
+    header{
+        color: $blanco;
+        @include flex();
+        border-radius: 0 10px 10px 0;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        width: 40px;
+        height: 100vh;
+        
+        #conoceme{
+            visibility: hidden;
+            position: fixed;
+            z-index: 999;
+            background-color: $azul;
+            overflow: hidden;
+            width: 30%;
+            height: 100vh;
+            transition: all .7s ease;
+            left: -700px;
+            padding: 0 20px;
+            border-radius: 0 10px 10px 0;
+            @include flex($fd: column, $jc: flex-start, $fw:no-wrap);
+            @include media($tam:768px){
+                width:80%;
+            }
+            .parrafosHeader{
+                overflow-y: scroll;
+                width: 100%;
+                height: 250px;
+                p{
+                    margin-bottom: 10px;
+                }
+                &::-webkit-scrollbar{
+                    width: 2px;
+                }
+                &::-webkit-scrollbar-thumb{
+                    margin-left: 5px;
+                    background-color: $amarillo;
+                    border-radius: 25px;
+                }
+
+            }
+            .miFoto{
+                img{
+                    max-width: 200px;
+                    margin-bottom: 20px;
+                    border-radius: 20px;
+                    height: 150px;
+                }
+            }
+
+            a{
+                text-decoration: none;
+                color: $amarillo;
+            }
+            span{
+                color:$blanco;
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+                i{
+                    cursor: pointer;
+                    margin-right: 20px;
+                    margin-top: 20px;
+                }
+            }
+            .infoConoceme{
+                @include flex($fd:column);
+                p{
+                    margin-bottom: 10px;
+                }
+            }
+            #curriculum{
+                
+                @include flex();
+                margin: 10px 0 20px 0;
+                a{
+                    background-color:$amarillo;
+                    padding: 5px 3px;
+                    border-radius: 50%;
+                    text-decoration: none;
+                    color: $azul;
+                    &:hover{
+                        transition: 1s ease;
+                        color: $amarillo;
+                        background-color: $azul;
+                    }
+                }
+                h3{
+                    font-size: 1.2rem;
+                }
+                
+            }
+        }
+                h2{
+                    color: $azul;
+                    transform: rotate(-90deg);
+                    font-weight: bold;
+                    font-size: 1.8rem;
+                    text-decoration: underline $amarillo;
+                    letter-spacing: 2px;
+                    cursor: pointer;
+                    @include media($tam:768px){
+                        font-size: 1.5rem;
+                    }
+        
+         
+        }
+        #contactame{
+            @include flex();
+            border-radius: 10px 0 0 10px;
+            position: fixed;
+            z-index: 999;
+            right: 0;
+            width: 40px;
+            height: 100vh;
+            top: 0;
+           
+            #contacto{
+                position: fixed;
+                z-index: 999;
+                border-radius: 10px 0 0 10px;
+                background-color: $steel;
+                width:30%;
+                height: 100vh;
+                right: -700px;
+                transition: all .7s ease;
+                @include flex($fd: column, $ai:flex-start, $jc:flex-start);
+                @include media($tam:768px){
+                    width: 80%;
+                }
+                span{
+                    color:$amarillo;
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 100%;
+                    i{
+                        cursor: pointer;
+                        margin-right: 40px;
+                        margin-top: 20px;
+                    }
+                }
+                h3{
+                    margin-top: 50px;
+                    font-size: 1.5rem;
+                    color: $amarillo;
+                    margin-left: 30px;
+                    margin-bottom: 50px;
+                }
+                p{
+                    color: $gris;
+                    font-size: 16px;
+                    margin-left: 30px;
+                    margin-right: 30px;
+                    @include media($tam:768px){
+                        font-size: 12px;
+                    }
+                }
+                a{
+                    margin-left: 30px;
+                    text-decoration: none;
+                    color: $blanco;
+                    margin-bottom: 20px;
+                    @include flex();
+                    font-size: 1rem;
+                    transition: all .4s ease;
+                    &:hover{
+                        color: $amarillo;
+                       
+                    }
+                    i{
+                        margin-right: 20px;
+                        color: $amarillo;
+                    }
+                }
+                .direccionCasa{
+                    width: 100%;
+                    height: 100px;
+                    overflow: hidden;
+                    display: flex;justify-content: center;align-items: center;
+                    @extend .my-2;
+    
+                        a{
+                            text-decoration: none;
+                            img{
+                                width: 200px;
+                                padding-right: 15px;
+                            }
+                        }
+                }
+                .redesSociales{
+                    @include flex();
+                    margin-top: 20px;
+                    width: 100%;
+                    a{
+                        font-size: 1.5rem;
+                        text-decoration: none;
+                        i{
+                          color: $amarillo;
+                          transition: all 1s ease;  
+                          &:hover{
+                            color: $blanco;
+                        }
+                        }
+                        
+                        
+                    }
+                }
+            }
+            h2{
+                color: $steel;
+                transform: rotate(90deg);
+                font-weight: bold;
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+                cursor: pointer;
+                text-decoration: underline $amarillo;
+                @include media($tam:768px){
+                    font-size: 1.5rem;
+                }
+            }
+                
+        }
+    }
+
+
+
+
+
+
+     //------------------------ESTILOS DEL MAIN------------------------//
+   main{
+    #principal{
+        width: 100%;
+        min-height: 100vh;
+        background: url("../img/fondo_principal.png")no-repeat left center / cover;
+        @include flex($fd:column, $jc:space-between);
+        .logo{
+            @include flex($fd:column);
+            img{
+                max-width:120px !important;
+            }
+        }
+        .banner{
+            width: 80%;
+            @include flex();
+            text-align: center;
+            .typed{
+                font-weight: normal;
+                color: $azul;
+            }
+            h2{
+                @include media($tam:768px){
+                    font-size: 1.5rem;
+                }
+                font-size: 3rem;
+                color: $steel;
+            }
+        }
+        .botonPortfolio{
+            @include flex($fd:column);
+            h2{
+                font-size: 1.5rem;
+                transition: all 1s ease;
+                color: $steel;
+                &:hover{
+                    opacity: .8;
+                }
+                span{
+                    color: $azul;
+                }
+            }
+            .scrollAnimado{
+                width: 22px;
+                height: 33px;
+                border-radius: 20px;
+                border: 3px solid $azul;
+                margin: 10px 0 20px 0;
+                transition: 1s ease;
+                display: flex;
+                cursor: pointer;
+                justify-content: center;
+                transition: all 1 ease;
+                &:hover{
+                    opacity: .8;
+                }
+                span{
+                    width: 7px;
+                    height: 7px;
+                    animation-name: scroll;
+                    animation-duration: 2s;
+                    animation-iteration-count:infinite;
+                    background-color: $steel;
+                    border-radius: 50%;
+                }
+            }
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: $azul;
+            .greemarc{
+                color: $steel;
+            }
+            @include media($tam:768px){
+                font-size: 1.5rem;
+            }
+            .yell{
+                color: $amarillo;
+                @extend .mx-1;
+                animation-name: coloresSimbol;
+                animation-duration: 15s;
+                animation-iteration-count:infinite;
+            }
+            .gree{
+                color: $steel;
+            }
+            span{
+                color: $azul;
+            }
+        }
+        div{
+            display: flex;
+            justify-content: center;
+        }
+    }
+    #portfolio{
+        width: 100%;
+        margin-top: 100px;
+        h2{
+            color: $steel;
+            @include flex($fd:column);
+            margin: 0 0 50px 0; 
+            font-size: 3rem;
+            text-align: center;
+            
+            @include media($tam:768px){
+                font-size: 1.5rem;
+            }
+            &:after{
+                content: "";
+                height: 5px;
+                background: $amarillo;
+                display: block;
+                margin: 10px 0 30px 0;
+                animation-name: afterSection;
+                animation-duration: 4s;
+                animation-iteration-count:infinite;
+                behavior: smooth;
+            }
+        }
+        .fila{
+            @include flex();
+            .articulo{
+                margin: 0 40px 60px 40px;
+                display: flex;
+                justify-content: center;
+                overflow: hidden;
+                border: double $azul;
+                &:hover{
+                    transition: 1s ease;
+                    box-shadow: 20px 20px 8px 0px rgba(0,0,0,0.75)
+                }
+                a{
+                    text-decoration: none;
+                    color: $azul;
+                }
+                img{
+                    @include media($tam:500px){
+                        width: 250px;
+                    }
+                }
+            }
+        }
+        .segundoAnimado{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+             .scrollAnimado{
+                width: 22px;
+                height: 33px;
+                border-radius: 20px;
+                border: 3px solid $azul;
+                margin: 10px 0 20px 0;
+                transition: 1s ease;
+                display: flex;
+                cursor: pointer;
+                justify-content: center;
+                transition: all 1 ease;
+                &:hover{
+                    opacity: .8;
+                }
+                span{
+                    width: 7px;
+                    height: 7px;
+                    animation-name: scroll;
+                    animation-duration: 2s;
+                    animation-iteration-count:infinite;
+                    background-color: $steel;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    #habilidades{
+        width: 100%;
+        margin-top: 100px;
+        h2{
+            color: $steel;
+            @include flex($fd:column);
+            margin: 0 0 50px 0; 
+            font-size: 3rem;
+            text-align: center;
+            
+            @include media($tam:768px){
+                font-size: 1.5rem;
+            }
+            &:after{
+                content: "";
+                height: 5px;
+                background: $amarillo;
+                display: block;
+                margin: 10px 0 30px 0;
+                animation-name: afterSection;
+                animation-duration: 4s;
+                animation-iteration-count:infinite;
+                behavior: smooth;
+            }
+        }
+    }
+}
+   
+    //------------------------ESTILOS DEL FOOTER------------------------//
+
+       
+    footer{
+        margin-top: 50px;
+        min-height: 40px;
+        border-radius: 15px 15px 0 0;
+        color: $steel;
+        background-color: $amarillo;
+        font-weight: bold;
+        text-align: center;
+        @include flex($jc: space-around);
+        small{
+            margin: 20px 50px;
+
+        }
+        .redesSocialesFoot{
+            @include media($tam:430px){
+            }
+        }
+        a{
+            text-decoration: none;
+            color: $steel;
+        }
+    }
+
+                
+}

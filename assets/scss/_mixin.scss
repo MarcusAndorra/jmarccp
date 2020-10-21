@@ -1,0 +1,109 @@
+@mixin flex($jc:center, $ai:center, $fw:wrap, $fd:row) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-wrap: $fw;
+    flex-direction: $fd;
+}
+@mixin after($wi:50px, $he:50px, $dis:flex, $jc:center, $ai:center, $fd:column){
+    width: $wi;
+    height: $he;
+    content: "";
+    display: $dis;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+@mixin fondo($url, $posx:center, $posy:center){
+    background: url($url) no-repeat $posx $posy / cover;
+}
+@mixin tipo($font:$miFont, $weight:normal){
+    font-family: $miFont;
+    font-weight: $weight;
+}
+@mixin enlaces($color:$azulO, $deco:none){
+    color:$color;
+    text-decoration: $deco;
+}
+@mixin separaSection($pl:200px, $pr:200px, $tac:center, $mb:50px, $mt:0px){
+    padding-left: $pl;
+    padding-right: $pr;
+    text-align: $tac;
+    margin-bottom: $mb;
+    margin-top: $mt;
+}
+@mixin media($tam, $m:max) {
+    @media screen and (#{$m}-width:$tam) {
+        @content;
+    }
+}
+
+//---------------BUCLE FOR paddings y margins--------------//
+@for $i from 1 to 21{
+    .mt-#{$i}{
+        margin-top: $i*10px;
+    }
+    .pt-#{$i}{
+        padding-top: $i*10px;
+    }
+    .mb-#{$i}{
+        margin-bottom: $i*10px;
+    }
+    .pb-#{$i}{
+        padding-bottom: $i*10px;
+    }
+    .mr-#{$i}{
+        margin-right: $i*10px;
+    }
+    .my-#{$i}{
+        margin-top: $i*10px;
+        margin-bottom: $i*10px;
+    }
+    .mx-#{$i}{
+        margin-left: $i*10px;
+        margin-right: $i*10px;
+    }
+    .px-#{$i}{
+        padding-left: $i*10px;
+        padding-right: $i*10px;
+    }
+    .py-#{$i}{
+        padding-top: $i*10px;
+        padding-bottom: $i*10px;
+    }
+    .pr-#{$i}{
+        padding-right: $i*10px;
+    }
+    .pl-#{$i}{
+        padding-left: $i*10px;
+    }
+    .rr-#{$i}{
+        padding-right: $i*10%;
+    }
+}
+@for $i from 1 through 12{
+    .col-md-#{$i}{
+        width: $i * 100% / 12;
+    }
+}
+//------------------------------------------//
+
+
+//-----------MIXIN PREFIJOS----------------//
+@mixin prefijo($propiedad, $valor, $dir:left) {
+    #{$propiedad}: $valor;
+
+    @if $dir==left {
+        -webkit-#{$propiedad}: $valor;
+        -moz-#{$propiedad}: $valor;
+        -ms-#{$propiedad}: $valor;
+        -o-#{$propiedad}: $valor;
+    }
+
+    @else {
+        #{$propiedad}:-webkit-#{$valor};
+        #{$propiedad}:-moz-#{$valor};
+        #{$propiedad}:-ms-#{$valor};
+        #{$propiedad}:-o-#{$valor};
+    }
+}

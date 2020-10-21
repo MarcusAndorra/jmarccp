@@ -1,0 +1,25 @@
+@keyframes coloresSimbol{
+    0%{color: transparent;}
+    20%{color: $azul;}
+    40%{color: transparent;}
+    60%{color: transparent;}
+    80%{color: $steel;}
+    100%{color: transparent;}
+}
+
+@keyframes scroll{
+    0%{margin-top: 10px;}
+    100%{margin-top: 20px;}
+    
+}
+
+@keyframes afterSection{
+    0%{width: 150px;}
+    50%{width: 40px;}
+    100%{width: 150px;}
+}
+
+@keyframes scrollLazyAnimado{
+    0%{transform: translateY(60px);}
+    100%{transform: translateY(0px);}
+}
